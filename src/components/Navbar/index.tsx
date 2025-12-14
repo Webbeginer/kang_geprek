@@ -69,9 +69,9 @@ const Navbar = () => {
 
         {/* DROPDOWN */}
         <div
-          className={`text-base absolute right-0 w-[200px] bg-white shadow-md backdrop-blur-sm rounded-md mt-[240px] z-[9999] ${
-            isActive ? "block" : "hidden"
-          } md:block md:static md:w-auto md:bg-transparent md:shadow-none md:mt-0`}
+          className={`text-base absolute right-0 w-[200px] shadow-md backdrop-blur-sm rounded-md mt-[240px] z-[9999] 
+                    ${isActive ? "block bg-white" : "hidden"} 
+                    md:block md:static md:w-auto md:bg-transparent md:shadow-none md:mt-0`}
         >
           <ul className="flex flex-col gap-4 m-4 md:flex-row">
             <li className={`group relative cursor-pointer ${pathname === "/home" && hash === "" ? "text-red-700" : "text-red-400"}`}>
