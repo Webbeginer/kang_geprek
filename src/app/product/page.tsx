@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function ProductPage() {
   const { data, error } = useSWR(
-    "http://localhost:3000/api/product",
+    `${process.env.NEXT_PUBLIC_API}/api/product`,
     (url) => fetch(url).then((res) => res.json())
   );
 
