@@ -51,7 +51,7 @@ const Navbar = () => {
   }, [isActive]);
 
   return (
-    <nav className={`${scroll ? styles.navbarFixed : ""} top-0 w-full bg-transparent py-1 px-4 flex items-center justify-between z-[9999]`}>
+    <nav className={`${scroll ? styles.navbarFixed : ""} top-0 w-full py-1 px-4 flex items-center justify-between z-[9999]`}>
       <div className="text-1xl font-bold ml-2 text-red-600">Kang Geprek</div>
 
       <div className="relative flex items-center" ref={dropdownRef}>
@@ -71,7 +71,7 @@ const Navbar = () => {
         <div
           className={`text-base absolute right-0 w-[200px] shadow-md backdrop-blur-sm rounded-md mt-[240px] z-[9999] 
                     ${isActive ? "block bg-white" : "hidden"} 
-                    md:block md:static md:w-auto md:bg-transparent md:shadow-none md:mt-0`}
+                     md:block md:static md:w-auto md:bg-transparent md:shadow-none md:mt-0`}
         >
           <ul className="flex flex-col gap-4 m-4 md:flex-row">
             <li className={`group relative cursor-pointer ${pathname === "/home" && hash === "" ? "text-red-700" : "text-red-400"}`}>

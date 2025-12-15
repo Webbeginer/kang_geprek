@@ -21,3 +21,11 @@
     transition: all 0.3s ease; /* Animasi opsional */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+.navbarFixed {
+  background-color: transparent;
+}
+@media (min-width: 768px) {
+  .navbarFixed {
+    background-color: transparent;
+  }
+}

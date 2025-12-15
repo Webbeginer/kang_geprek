@@ -12,7 +12,51 @@ export default function ProductPage() {
   );
 
   if (error) return <div>Failed to load</div>;
-  if (!data) return <div className="text-center">Loading...</div>;
+    // skeleton card
+  const SkeletonCard = () => (
+  <div className="w-[250px] bg-white border rounded-xl shadow-sm p-4 animate-pulse">
+    {/* gambar */}
+    <div className="w-full h-[180px] bg-gray-200 rounded-lg" />
+
+    {/* text */}
+    <div className="mt-4 space-y-3">
+      <div className="h-5 bg-gray-200 rounded w-3/4 mx-auto" />
+      <div className="h-6 bg-gray-200 rounded w-1/2 mx-auto" />
+    </div>
+  </div>
+);
+
+  if (!data)
+  return (
+    <div className="w-full px-4 py-6 space-y-10">
+      {/* Skeleton Makanan */}
+      <section>
+        <h2 className="text-2xl font-bold text-red-700 mb-6 text-center">
+          🍗 Makanan
+        </h2>
+
+        <div className="w-full flex flex-wrap justify-center gap-6">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </div>
+      </section>
+
+      {/* Skeleton Minuman */}
+      <section>
+        <h2 className="text-2xl font-bold text-red-700 mb-6 text-center">
+          🥤 Minuman
+        </h2>
+
+        <div className="w-full flex flex-wrap justify-center gap-6">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+
 
   const products = data.data ?? [];
 
@@ -57,6 +101,7 @@ export default function ProductPage() {
       </div>
     </div>
   );
+
 
   return (
     <div className="w-full px-4 py-6 space-y-10">
