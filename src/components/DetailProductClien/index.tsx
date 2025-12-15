@@ -94,7 +94,7 @@ export default function DetailProductClient({
         onClick={addToCart}
         className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-md font-semibold transition"
       >
-        Add to Cart
+        Tambah ke keranjang
       </button>
     </div>
   );
