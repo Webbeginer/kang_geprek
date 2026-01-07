@@ -60,13 +60,16 @@ export default function ProductPage() {
 
   const products = data.data ?? [];
 
-  // 🔥 INI PEMBEDANYA
+  
   const makanan = products.filter(
-    (item: any) => item.category === "Makanan"
+    (item: any) => item.category === "makanan"
+  );
+  const makananRingan = products.filter(
+    (item: any) => item.category === "makanan ringan"
   );
 
   const minuman = products.filter(
-    (item: any) => item.category === "Minuman"
+    (item: any) => item.category === "minuman"
   );
 
   const Card = ({ product }: { product: any }) => (
@@ -113,6 +116,10 @@ export default function ProductPage() {
         </h2>
 
         <div className="w-full flex flex-wrap justify-center gap-6">
+          
+          {makananRingan.map((product: any) => (
+            <Card key={product.id} product={product} />
+          ))}
           {makanan.map((product: any) => (
             <Card key={product.id} product={product} />
           ))}
